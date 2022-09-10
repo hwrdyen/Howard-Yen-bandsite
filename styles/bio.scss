@@ -1,0 +1,603 @@
+@use './partials/global' as *;
+
+@media screen and (min-device-width: $mobile_min_viewwidth) {
+    body {
+        background-color: $primary_black;
+        font-family: "Avenir";
+        margin: 10px 0px;
+    }
+
+    div, h1, h2, h3, p, img, ul {
+        margin: 0rem;
+        padding: 0rem;
+    }
+
+    /* Font Size */
+    .pageheader {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+    }
+
+    .sectionheader {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+    }
+
+    .subheader {
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 600;
+    }
+
+    .bodycopy {
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 400;
+    }
+
+    .footercopy {
+        font-size: 13px;
+        line-height: 18px;
+        font-weight: 400;
+    }
+
+    .labelandbuttons {
+        font-size: 10px;
+        line-height: 20px;
+        font-weight: 700;
+    }
+
+    /* Header */
+    .header {
+        color: $primary_white;
+        text-align: center;
+
+        &__title {
+            font-weight: 400;
+            box-sizing: border-box;
+            width: 120px;
+            height: 20px;
+            margin-bottom: 10px;
+            display: inline-block;
+
+            &--link {
+                width: 120px;
+                height: 20px;
+                font-size: 24px;
+                box-sizing: border-box;
+                color: $primary_white;
+                text-decoration: none;
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-evenly;
+            padding: 0px;
+            
+            &--item {
+                width: 50vw;
+                padding-bottom: 5px;
+            }
+
+            &--link {
+                font-size: 12px;
+                color: $primary_white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    /* The Bees Knees */
+    .first__container {
+        color: $primary_white;
+        position: relative;
+        width: 100vw;
+        height: 55vw;
+    }
+
+    .activepage {
+        border-bottom: 2px solid $primary_white;
+        font-weight: 600;
+    }
+
+    .first-container {
+        &__header {
+            position: absolute;
+            top: 40%;
+            left: 5%;
+            z-index: 10;
+        }
+
+        &__headerimg {
+            height: 100%;
+        }
+
+        &__headerbackground {
+            position: absolute;
+            width: 100vw;
+            height: 100%;
+            background-color: $primary_black;
+            opacity: 50%;
+        }
+
+        &__backgroundimg {
+            width: 100vw;
+            height: 100%;
+        }
+    }
+
+    /* About the Musicians */
+    .second__container {
+        background-color: $primary_white;
+        padding-left: $MB_padding_betweencomponents;
+        padding-right: $MB_padding_betweencomponents;
+    }
+
+    .second-container {
+        &__title {
+            padding-top: $MB_padding_beforeheadline;
+            padding-bottom: $MB_padding_afterheadline;
+        }
+
+        &__coverimg {
+            box-sizing: border-box;
+            width: 100%;
+
+            &--quote {
+                text-align: start;
+                width: 300px;
+                font-size: 15px;
+                line-height: 24px;
+                font-weight: 600;
+                margin: 10px 0px;
+            }
+
+            &--author {
+                font-size: 16px;
+                line-height: 25px;
+                font-weight: 600;
+                text-align: start;
+            }
+        }
+
+        &__paragraphtitle {
+            padding-top: $MB_padding_beforeheadline;
+            padding-bottom: $MB_padding_afterheadline;
+        }
+
+        &__body {
+            &--first, &--second {
+                padding-bottom: 15px;
+            }
+
+            &--first {
+                width: 282px;
+            }
+
+            &--second {
+                width: 318px;
+            }
+        }
+    }
+
+    /* Photo Gallery */
+    .third__container {
+        background-color: $secondary_alabaster;
+        padding-left: $MB_padding_betweencomponents;
+        padding-right: $MB_padding_betweencomponents;
+        box-sizing: border-box;
+    }
+
+    .third-container {
+        &__title {
+            padding-top: $MB_padding_beforeheadline;
+            padding-bottom: $MB_padding_afterheadline;
+        }
+
+        &__galleryphoto {
+            display: block;
+            width: 100%;
+            padding-bottom: $MB_padding_afterheadline;
+        }
+    } 
+
+    /* Footer */
+    .footer {
+        background-color: $primary_black;
+        color: $primary_white;
+        padding-left: $MB_padding_betweencomponents;
+        padding-right: $MB_padding_betweencomponents;
+
+        &__title {
+            padding-top: $MB_padding_beforeheadline;
+            padding-bottom: $MB_padding_afterheadline;
+        }
+
+        &__sociallist {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            gap: 28px;
+            height: 25px;
+
+            &--icon {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        &__contact {
+            margin-top: 10px;
+            margin-bottom: 40px;
+
+            &--info {
+                margin: 20px 0px;
+            }
+
+            &--address {
+                margin: 20px 0px;
+            }
+            
+            &--email{
+                color: $primary_white;
+                text-decoration: none;
+            }
+
+        }
+
+        &__bandsitelogo {
+            font-weight: 400;
+            box-sizing: border-box;
+            width: 120px;
+            height: 20px;
+            margin-bottom: 5px;
+            display: inline-block;
+
+            &--link {
+                width: 120px;
+                height: 20px;
+                font-size: 24px;
+                box-sizing: border-box;
+                color: $primary_white;
+                text-decoration: none;
+            }
+        }
+
+        &__copyright {
+            font-size: 10px;
+            line-height: 20px;
+            font-weight: normal;
+        }
+    }
+
+}
+
+/*------TABLET------------------------------------------------------------------*/
+
+@media screen and (min-device-width: $tablet_min_viewwidth) {
+    /* Font Size */
+    .pageheader {
+        font-size: 60px;
+        line-height: 68px;
+        font-weight: 700;
+    }
+
+    .sectionheader {
+        font-size: 36px;
+        line-height: 44px;
+        font-weight: 700;
+    }
+
+    .subheader {
+        font-size: 14px;
+        line-height: 32px;
+        font-weight: 600;
+    }
+
+    .bodycopy {
+        font-size: 14px;
+        line-height: 22px;
+        font-weight: 400;
+    }
+
+    .footercopy {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+
+    .labelandbuttons {
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 700;
+    }
+
+    /* Header */
+    .header {
+        color: $primary_white;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 50px;
+
+        &__title {
+            font-weight: normal;
+            margin-left: 30px;
+
+            &--link {
+                box-sizing: border-box;
+                max-width: 120px;
+                max-height: 20px;
+                color: $primary_white;
+                text-decoration: none;
+            }
+        }
+
+        &__list {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            justify-content: space-evenly;
+            padding: 0px;
+            gap: 60px;
+            margin-left: 60px;
+            position: relative;
+            top: 7px;
+            
+            &--item {
+                width: auto;
+                height: 30px;
+            }
+
+            &--link {
+                color: $primary_white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    /* First Container */
+    .first__container {
+        height: 425px;
+    }
+
+    .first-container {
+        &__headerbackground, &__backgroundimg {
+            height: 425px;
+        }
+    }
+
+    /* Second Container */
+    .second__container {
+        padding: 36px;
+    }
+
+    .second-container {
+        &__articlebody {
+            padding: 0px 8%;
+            position: relative;
+        }
+
+        &__coverimg {
+            width: 100%;
+            display: block;
+
+            &--quote {
+                width: 584.2px;
+                font-size: 22px;
+                line-height: 30px;
+                margin: 20px 0px;
+            }
+
+            &--author {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+        }
+
+        &__paragraphtitle {
+            font-size: 24px;
+        }
+
+        &__paragraphbody {
+            display: flex;
+            flex-direction: row;
+            gap: 34px;
+        }
+
+        &__body {
+            &--first {
+                width: 275px;
+            }
+
+            &--second {
+                width: 277px;
+            }
+        }
+    }
+
+    /* Third Container */
+    .third__container {
+        padding: 36px;
+        padding-bottom: 10px;
+    }
+
+    .third-container {
+        &__photoalbum {
+            display: flex;
+            flex-direction: row;
+            flex-wrap:wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 4%;
+        }
+
+        &__galleryphoto {
+            width: 30%;
+            padding-bottom: 4%;
+        }
+    }
+
+    /* Footer */
+    .footer {
+        padding: 36px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        position: relative;
+    }
+
+    /* Assign order to make "Bandsite" move before contactcard*/
+    .footer :nth-child(1) {order: 1;}
+    .footer :nth-child(2) {order: 2;}
+    .footer :nth-child(3) {order: 4;}
+    .footer :nth-child(4) {order: 3;}
+    .footer :nth-child(5) {order: 5;}
+
+    .footer__sociallist {
+        height: 22px;
+        margin-left: 30px;
+        
+        &--item, &--link, &--icon {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    .footer__bandsitelogo {
+        margin-left: auto;
+    }
+
+    .footer__contact {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        width: 100vw;
+        margin-top: 0px;
+        gap: 40px;
+    }
+
+    .footer-contact__contactcard {
+        width: 206px;
+    }
+
+    .footer__copyright {
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: 400;
+    }
+}
+
+/*------Desktop------------------------------------------------------------------*/
+@media screen and (min-device-width: $desktop_min_viewwidth) {
+    /* Header */
+    .header {
+        height: 70px;
+
+        &__title {
+            margin-left: 120px;
+   
+        }
+
+        &__list {
+            margin-left: 50px;
+            top: 0px; 
+            &--item {
+                font-size: 20px;
+                height: 12px;
+                padding: 20px 0px 35px 0px;
+            }
+        }
+    }
+
+    /* First Container */
+    .first__container {
+        height: 700px;
+    }
+
+    .first-container {
+        &__header {
+            margin-left: 60px;
+        }
+
+        &__headerbackground, &__backgroundimg {
+            height: 700px;
+        }
+    }
+
+    /* Second Container */
+    .second-container {
+        &__title {
+            margin-left: 90px;
+        }
+
+        &__articlebody {
+            padding: 0 15%;
+        }
+
+        &__coverimg {
+            &--quote {
+                font-size: 23px;
+                font-weight: 600;
+                width: 690px;
+            }
+
+            &--author {
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+
+        &__paragraphbody {
+            gap: 20px;
+        }
+        &__body {
+            &--first {
+                width: 415px;
+            }
+
+            &--second {
+                width: 410px;
+            }
+        }
+
+    }
+
+    /* Third Container */
+    .third__container {
+        padding: 36px 120px;
+    }
+
+    .third-container {
+        &__photoalbum {
+            gap: 25px;
+        }
+
+        &__galleryphoto {
+            width: 31.5%;
+            padding-bottom: 0px;
+        }
+    }
+
+    /* Footer */
+    .footer {
+        padding: 36px 120px;
+    }
+
+    .footer__sociallist {
+        height: 22px;
+        margin-left: 50px;
+        gap: 30px;
+    }
+
+    .footer__contact {
+        gap: 65px;
+    }
+}

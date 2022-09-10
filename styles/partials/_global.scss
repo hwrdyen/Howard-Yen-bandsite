@@ -1,0 +1,54 @@
+/* <Type Kit> */
+/* Typeface*/
+@font-face {
+    font-family: "Avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"),
+         url("../../assets/fonts/Alternative_files/AvenirNextLTPro.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"),
+         url("../../assets/fonts/Alternative_files/AvenirNextLTProDemi.ttf") format("ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Avenir";
+    src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"),
+         url("../../assets/fonts/Alternative_files/AvenirNextLTProBold.ttf") format("ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* <Colors> */
+/* Primary Colors*/
+$primary_black: #323232;
+$primary_silver: #AFAFAF;
+$primary_white: #FFFFFF;
+
+/* Secondary Colors */
+$secondary_darkblack: #000000;
+$secondary_mercury: #E1E1E1;
+$secondary_alabaster: #FAFAFA;
+
+/* <Layout Grid> */
+/* device width */
+$desktop_min_viewwidth: 1280px;
+$tablet_min_viewwidth: 768px;
+$mobile_min_viewwidth: 0px;
+
+/* <Padding> */
+/* Desktop and Tablet */
+$DT_padding_beforeheadline: 48px;
+$DT_padding_afterheadline: 36px;
+$DT_padding_betweencomponents: 36px;
+
+/* Mobile */
+$MB_padding_beforeheadline: 24px;
+$MB_padding_afterheadline: 16px;
+$MB_padding_betweencomponents: 16px;
+
