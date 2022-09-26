@@ -32,13 +32,6 @@
     font-family: "Avenir";
     margin: 10px 0px;
   }
-  label,
-button,
-input,
-textarea {
-    font-family: "Avenir";
-    color: #323232;
-  }
   div, h1, h2, h3, p, img, ul {
     margin: 0rem;
     padding: 0rem;
@@ -111,20 +104,35 @@ textarea {
     color: #FFFFFF;
     text-decoration: none;
   }
-  /* The Bees Knees */
+  /* First Container */
   .first__container {
     color: #FFFFFF;
     position: relative;
     width: 100vw;
-    height: 55vw;
+    height: 80vw;
   }
   .activepage {
     border-bottom: 2px solid #FFFFFF;
     font-weight: 600;
   }
-  .first-container__header {
+  .first-container__firstheader {
     position: absolute;
-    top: 40%;
+    top: 12%;
+    left: 5%;
+    z-index: 10;
+  }
+  .first-container__secondheader {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    z-index: 10;
+    width: 250px;
+  }
+  .first-container__soundcloud {
+    width: 300px;
+    height: 95px;
+    position: absolute;
+    top: 55%;
     left: 5%;
     z-index: 10;
   }
@@ -141,140 +149,59 @@ textarea {
   .first-container__backgroundimg {
     width: 100vw;
     height: 100%;
-  }
-  /* About the Musicians */
-  .second__container {
-    background-color: #FFFFFF;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-  .second-container__title {
-    padding-top: 24px;
-    padding-bottom: 16px;
-  }
-  .second-container__coverimg {
-    box-sizing: border-box;
-    width: 100%;
-  }
-  .second-container__coverimg--quote {
-    text-align: start;
-    width: 300px;
-    font-size: 15px;
-    line-height: 24px;
-    font-weight: 600;
-    margin: 10px 0px;
-  }
-  .second-container__coverimg--author {
-    font-size: 16px;
-    line-height: 25px;
-    font-weight: 600;
-    text-align: start;
-  }
-  .second-container__paragraphtitle {
-    padding-top: 24px;
-    padding-bottom: 16px;
-  }
-  .second-container__body--first, .second-container__body--second {
-    padding-bottom: 15px;
-  }
-  .second-container__body--first {
-    width: 282px;
-  }
-  .second-container__body--second {
-    width: 318px;
-  }
-  /* Photo Gallery */
-  .third__container {
-    background-color: #FAFAFA;
-    padding-left: 16px;
-    padding-right: 16px;
-    box-sizing: border-box;
-  }
-  .third-container__title {
-    padding-top: 24px;
-    padding-bottom: 16px;
-  }
-  .third-container__galleryphoto {
-    display: block;
-    width: 100%;
-    padding-bottom: 16px;
-  }
-  /* Conversation Container */
-  .conversation__container {
-    background-color: #FFFFFF;
-    padding: 15px;
-    padding-left: 16px;
-    padding-right: 16px;
-    box-sizing: border-box;
-  }
-  .conversation__submitform {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    border-bottom: 1px solid #E1E1E1;
-  }
-  .conversation__profileimg {
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
     -o-object-fit: cover;
        object-fit: cover;
   }
-  label, input, button {
-    display: block;
+  /* Shows Container */
+  .showsinfo__container {
+    background-color: #FFFFFF;
+    padding-left: 16px;
+    padding-right: 16px;
   }
-  label {
-    font-size: 10px;
-    color: #AFAFAF;
-    padding: 5px 0px;
+  .showsinfo__title {
+    padding-top: 24px;
+    padding-bottom: 16px;
   }
-  input, textarea, button {
-    margin-bottom: 15px;
-  }
-  .conversation__input--name {
-    width: 250px;
-    height: 25px;
-  }
-  .conversation__input--comment {
-    width: 250px;
-    height: 100px;
-  }
-  .conversation__button {
-    width: 250px;
-    height: 30px;
-    border-radius: 4px;
-    background-color: #323232;
-    color: #FFFFFF;
-  }
-  .comment__card {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+  .shows-information__card {
+    padding: 15px 0px;
     border-bottom: 1px solid #E1E1E1;
-    padding: 10px 0px;
   }
-  .comment__profileimg {
-    border-radius: 50%;
-    width: 36px;
-    height: 36px;
+  .shows-information__card:has(.infocard__buttonlink:visited) {
     background-color: #E1E1E1;
   }
-  .comment__content {
-    width: 80%;
-    position: relative;
+  .shows-information__card:hover {
+    background-color: #FAFAFA;
   }
-  .comment__author {
-    font-weight: bold;
-    display: inline-block;
-  }
-  .comment__timestamp {
-    color: #E1E1E1;
-    display: inline-block;
-    position: absolute;
-    right: 0px;
-  }
-  .comment__comment {
+  .infocard__date, .infocard__venue, .infocard__location, .infocard__button {
     display: block;
+  }
+  .infocard__date, .infocard__venue, .infocard__location {
+    padding-bottom: 20px;
+  }
+  .infocard__date {
+    font-weight: 600;
+  }
+  .infocard__button {
+    background-color: #323232;
+    color: #FFFFFF;
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    font-size: 20px;
+  }
+  .infocard__buttonlink {
+    text-decoration: none;
+  }
+  .infocard-title__date--mobile, .infocard-title__venue--mobile, .infocard-title__location--mobile {
+    display: block;
+    color: #AFAFAF;
+    padding: 5px 0px;
+    font-weight: 600;
+  }
+  .infocard-title__date--DSK, .infocard-title__venue--DSK, .infocard-title__location--DSK {
+    display: none;
+    color: #AFAFAF;
+    font-weight: 600;
   }
   /* Footer */
   .footer {
@@ -410,65 +337,84 @@ textarea {
   .first__container {
     height: 425px;
   }
+  .first-container__firstheader {
+    position: absolute;
+    top: 12%;
+    left: 5%;
+    z-index: 10;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .first-container__secondheader {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    z-index: 10;
+    width: 600px;
+  }
+  .first-container__soundcloud {
+    width: 400px;
+    height: 120px;
+    position: absolute;
+    top: 62%;
+    left: 5%;
+    z-index: 10;
+  }
   .first-container__headerbackground, .first-container__backgroundimg {
     height: 425px;
   }
-  /* Second Container */
-  .second__container {
+  /* Shows Container */
+  .showsinfo__container {
     padding: 36px;
   }
-  .second-container__articlebody {
-    padding: 0px 8%;
-    position: relative;
+  .infocard-title__date--mobile, .infocard-title__venue--mobile, .infocard-title__location--mobile {
+    display: none;
+    color: #AFAFAF;
+    font-weight: 600;
   }
-  .second-container__coverimg {
-    width: 100%;
-    display: block;
-  }
-  .second-container__coverimg--quote {
-    width: 584.2px;
-    font-size: 22px;
-    line-height: 30px;
-    margin: 20px 0px;
-  }
-  .second-container__coverimg--author {
-    font-size: 16px;
-    margin-bottom: 25px;
-  }
-  .second-container__paragraphtitle {
-    font-size: 24px;
-  }
-  .second-container__paragraphbody {
+  .infocard__title--DSK {
     display: flex;
     flex-direction: row;
-    gap: 34px;
+    gap: 40px;
+    margin-left: 5px;
+    margin-top: 15px;
   }
-  .second-container__body--first {
-    width: 275px;
+  .infocard-title__date--DSK, .infocard-title__venue--DSK, .infocard-title__location--DSK {
+    display: inline-block;
+    color: #AFAFAF;
+    font-weight: 600;
   }
-  .second-container__body--second {
-    width: 277px;
+  .infocard-title__date--DSK {
+    width: 150px;
   }
-  /* Third Container */
-  .third__container {
-    padding: 36px;
-    padding-bottom: 10px;
+  .infocard-title__venue--DSK {
+    width: 120px;
   }
-  .third-container__photoalbum {
+  .infocard-title__location--DSK {
+    width: 130px;
+  }
+  .shows-information__card {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 4%;
+    gap: 40px;
   }
-  .third-container__galleryphoto {
-    width: 30%;
-    padding-bottom: 4%;
+  .infocard__date {
+    width: 150px;
+    vertical-align: center;
+    padding-bottom: 0px;
   }
-  /* Conversation Container */
-  .conversation__container {
-    padding: 36px;
+  .infocard__venue {
+    width: 120px;
+    padding-bottom: 0px;
+  }
+  .infocard__location {
+    width: 130px;
+    padding-bottom: 0px;
+  }
+  .infocard__button {
+    width: 180px;
   }
   /* Footer */
   .footer {
@@ -478,41 +424,6 @@ textarea {
     flex-wrap: wrap;
     align-items: center;
     position: relative;
-  }
-  .conversation__submitform {
-    padding-left: 60px;
-    margin-top: 30px;
-    height: 300px;
-  }
-  .conversation__profileimg {
-    width: 48px;
-    height: 48px;
-  }
-  .conversation__title--name {
-    font-size: 15px;
-  }
-  .conversation__input--name {
-    width: 70vw;
-    height: 40px;
-  }
-  .conversation__title--comment {
-    font-size: 15px;
-  }
-  .conversation__input--comment {
-    width: 70vw;
-  }
-  form {
-    position: relative;
-  }
-  .conversation__button {
-    position: absolute;
-    right: 0px;
-    height: 45px;
-    width: 200px;
-    font-size: 20px;
-  }
-  .comment__content {
-    width: 89%;
   }
   /* Assign order to make "Bandsite" move before contactcard*/
   .footer :nth-child(1) {
@@ -580,69 +491,47 @@ textarea {
   .first__container {
     height: 700px;
   }
-  .first-container__header {
-    margin-left: 60px;
+  .first-container__firstheader {
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    z-index: 10;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  .first-container__secondheader {
+    font-size: 70px;
+    line-height: 100px;
+    position: absolute;
+    top: 35%;
+    left: 5%;
+    z-index: 10;
+    width: 600px;
+  }
+  .first-container__soundcloud {
+    width: 500px;
+    height: 170px;
+    position: absolute;
+    top: 38%;
+    left: 55%;
+    z-index: 10;
   }
   .first-container__headerbackground, .first-container__backgroundimg {
     height: 700px;
   }
-  /* Second Container */
-  .second-container__title {
-    margin-left: 90px;
-  }
-  .second-container__articlebody {
-    padding: 0 15%;
-  }
-  .second-container__coverimg--quote {
-    font-size: 23px;
-    font-weight: 600;
-    width: 690px;
-  }
-  .second-container__coverimg--author {
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .second-container__paragraphbody {
-    gap: 20px;
-  }
-  .second-container__body--first {
-    width: 415px;
-  }
-  .second-container__body--second {
-    width: 410px;
-  }
-  /* Third Container */
-  .third__container {
+  /* Shows Container */
+  .showsinfo__container {
     padding: 36px 120px;
+    position: relative;
   }
-  .third-container__photoalbum {
-    gap: 25px;
+  .infocard__title--DSK {
+    position: absolute;
+    top: 60px;
+    left: 370px;
   }
-  .third-container__galleryphoto {
-    width: 31.5%;
-    padding-bottom: 0px;
-  }
-  /* Conversation Container */
-  .conversation__container {
-    padding: 36px 120px;
-  }
-  .conversation__submitform {
-    width: 500px;
-    padding-left: 0px;
-    margin-left: 23%;
-  }
-  form {
-    width: 400px;
-  }
-  .conversation__input--name {
-    width: 100%;
-  }
-  .conversation__input--comment {
-    width: 100%;
-  }
-  .conversation__record {
-    width: 500px;
-    margin-left: 23%;
+  .shows-information__card {
+    margin-left: 19%;
+    width: 750px;
   }
   /* Footer */
   .footer {
@@ -656,4 +545,8 @@ textarea {
   .footer__contact {
     gap: 65px;
   }
-}/*# sourceMappingURL=bio.css.map */
+}
+/* hidden content based on viewport width */
+.hidden {
+  display: none;
+}/*# sourceMappingURL=shows.css.map */
