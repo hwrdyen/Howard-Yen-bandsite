@@ -92,9 +92,9 @@
                 <img class="conversation__profileimg" src="./assets/images/Mohan-muruge.jpg" alt="mohan profile picture">
                 <form>
                     <label for="name" class="conversation__title--name">NAME</label>
-                    <input type="text" id="name" placeholder="Enter your name" class="conversation__input--name"/>
+                    <input type="text" id="name" name="comment_author" placeholder="Enter your name" class="conversation__input--name" required/>
                     <label for="comment" class="conversation__title--comment">COMMENT</label>
-                    <textarea id="comment" placeholder="Add a new comment" class="conversation__input--comment"></textarea>
+                    <textarea id="comment" name="comment_comment" placeholder="Add a new comment" class="conversation__input--comment" required></textarea>
                     <button id="submit__button" class="conversation__button">COMMENT</button>
                 </form>
             </div>

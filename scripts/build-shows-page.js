@@ -22,12 +22,13 @@ function createShowInfoContent() {
     showsinfo__container.appendChild(showsinfo__content);
 }
 
-function appendShowInfoCard__mobile(shows_info) {
+function appendShowInfoCard__mobile(shows_info, shows_id) {
     let showsinfo__content = document.querySelector(".showsinfo__content");
 
     //create shows info card and append into shows info content
     let showsinformation__card = document.createElement("div");
     showsinformation__card.classList.add("shows-information__card");
+    showsinformation__card.setAttribute("id", shows_id);
     showsinfo__content.appendChild(showsinformation__card);
 
     
@@ -102,51 +103,22 @@ function appendShowInfoTitle__DSK() {
     infocard__title__DSK.appendChild(infocardtitle__location);
 }
 
-/*function appendShowInfoCard__DSK(shows_info) {
-    let showsinfo__content = document.querySelector(".showsinfo__content");
-    //create shows info card and append into shows info content
-    let showsinformation__card = document.createElement("div");
-    showsinformation__card.classList.add("showsinformation__card--DSK");
-    showsinformation__card.classList.add("hidden");
-    showsinfo__content.appendChild(showsinformation__card);
 
-    //DSK version
-    //append all info into one shows info card
-
-    //date
-    let infocard__date = document.createElement("span");
-    infocard__date.classList.add("infocard__date--DSK");
-    infocard__date.classList.add("hidden");
-    infocard__date.innerText = shows_info["date"];
-    showsinformation__card.appendChild(infocard__date);
-
-    //venue
-    let infocard__venue = document.createElement("span");
-    infocard__venue.classList.add("infocard__venue--DSK");
-    infocard__venue.classList.add("hidden");
-    infocard__venue.innerText = shows_info["venue"];
-    showsinformation__card.appendChild(infocard__venue);
-
-    //location
-    let infocard__location = document.createElement("span");
-    infocard__location.classList.add("infocard__location--DSK");
-    infocard__location.classList.add("hidden");
-    infocard__location.innerText = shows_info["location"];
-    showsinformation__card.appendChild(infocard__location);
-    
-    //button
-    let infocard__button = document.createElement("button");
-    infocard__button.classList.add("infocard__button--DSK");
-    infocard__button.classList.add("hidden");
-    infocard__button.innerText = "BUY TICKETS";
-    showsinformation__card.appendChild(infocard__button);
-}*/
-
+/* Build the Show Info Container */
 createShowInfoContainer("Shows");
 createShowInfoContent();
 
-appendShowInfoTitle__DSK()
+appendShowInfoTitle__DSK();
 for (let i = 0; i<showinfo_database.length; i++){
-    appendShowInfoCard__mobile(showinfo_database[i]);
+    appendShowInfoCard__mobile(showinfo_database[i], i);
 }
+/* Finished Setting up the default show information */
+
+/* Buy Button Action */
+//After visited the BUY TICKETS link, apply selected state for ShowInfoCard
+let buyticketbutton = document.querySelectorAll(".infocard__button")
+buyticketbutton.addEventListener(("click"), (event) => {
+    let parentdiv_id = document.getElementById(event.target.parentElement.id);
+    parentdiv_id.classList.add("shows-information__greycard");
+})
 

@@ -19,6 +19,11 @@ function displayComment(comment_data) {
     comment__content.classList.add("comment__content");
     comment__card.appendChild(comment__content);
 
+    /* content title (author and timestamp) */
+    let content_title = document.createElement("div");
+    content_title.classList.add("comment__content--title");
+    comment__content.appendChild(content_title);
+
     let comment__author = document.createElement("span");
     let comment__timestamp = document.createElement("span");
     let comment__comment = document.createElement("span");
@@ -28,8 +33,12 @@ function displayComment(comment_data) {
     comment__author.innerText = comment_data.author;
     comment__timestamp.innerText = comment_data.timestamp;
     comment__comment.innerText = comment_data.comment;
-    comment__content.appendChild(comment__author);
-    comment__content.appendChild(comment__timestamp);
+
+    /* author and timestamp added into content_title */
+    /* content_title is added into comment_content */
+    content_title.appendChild(comment__author);
+    content_title.appendChild(comment__timestamp);
+    /* comment added into comment_content */
     comment__content.appendChild(comment__comment);
 }
 
@@ -50,11 +59,35 @@ submit__button.addEventListener('click', (event) => {
     /* get Timestamp */
     var date = new Date();
     var submit_timestamp = (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear();
-    
+
     showncomment_data["author"] = submit_name
     showncomment_data["timestamp"] = submit_timestamp;
     showncomment_data["comment"] = submit_comment;
-    showncomment_database.unshift(showncomment_data);
+    if (submit_name != "" && submit_comment != "") {
+        let comment_author = document.getElementById("name");
+        comment_author.classList.remove("inputredborder");
+        let comment_comment = document.getElementById("comment");
+        comment_comment.classList.remove("inputredborder");
+        
+        showncomment_database.unshift(showncomment_data);
+    } else {
+        if (submit_name === "") {
+            let comment_author = document.getElementById("name");
+            comment_author.classList.add("inputredborder");
+        }
+        else if (submit_comment === "") {
+            let comment_comment = document.getElementById("comment");
+            comment_comment.classList.add("inputredborder");
+        }
+        else {
+            let comment_author = document.getElementById("name");
+            comment_author.classList.add("inputredborder");
+            let comment_comment = document.getElementById("comment");
+            comment_comment.classList.add("inputredborder");
+        }           
+
+    }
+
     //console.log(showncomment_database);
     form.reset();
     let conversation__record = document.querySelector(".conversation__record");

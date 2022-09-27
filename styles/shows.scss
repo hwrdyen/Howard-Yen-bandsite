@@ -4,7 +4,7 @@
     body {
         background-color: $primary_black;
         font-family: "Avenir";
-        margin: 10px 0px;
+        margin: 0.625rem 0rem;
     }
 
     div, h1, h2, h3, p, img, ul {
@@ -14,38 +14,38 @@
 
     /* Font Size */
     .pageheader {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 1.5rem;
+        line-height: 2rem;
         font-weight: 700;
     }
 
     .sectionheader {
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 1.5rem;
+        line-height: 2rem;
         font-weight: 700;
     }
 
     .subheader {
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
         font-weight: 600;
     }
 
     .bodycopy {
-        font-size: 13px;
-        line-height: 18px;
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
         font-weight: 400;
     }
 
     .footercopy {
-        font-size: 13px;
-        line-height: 18px;
+        font-size: 0.8125rem;
+        line-height: 1.125rem;
         font-weight: 400;
     }
 
     .labelandbuttons {
-        font-size: 10px;
-        line-height: 20px;
+        font-size: 0.625rem;
+        line-height: 1.25rem;
         font-weight: 700;
     }
 
@@ -57,15 +57,14 @@
         &__title {
             font-weight: 400;
             box-sizing: border-box;
-            width: 120px;
-            height: 20px;
-            margin-bottom: 10px;
-            display: inline-block;
+            width: 100%;
+            height: 1.25rem;
+            margin-bottom: 0.625rem;
 
             &--link {
-                width: 120px;
-                height: 20px;
-                font-size: 24px;
+                width: 7.5rem;
+                height: 1.25rem;
+                font-size: 1.5rem;
                 box-sizing: border-box;
                 color: $primary_white;
                 text-decoration: none;
@@ -77,23 +76,23 @@
             flex-direction: row;
             list-style: none;
             justify-content: space-evenly;
-            padding: 0px;
+            padding: 0rem;
             
             &--item {
                 width: 50vw;
-                padding-bottom: 5px;
+                padding-bottom: 0.3125rem;
             }
 
             &--link {
-                font-size: 12px;
+                font-size: 0.75rem;
                 color: $primary_white;
                 text-decoration: none;
             }
         }
     }
 
-     /* First Container */
-     .first__container {
+    /* First Container */
+    .first__container {
         color: $primary_white;
         position: relative;
         width: 100vw;
@@ -101,7 +100,7 @@
     }
 
     .activepage {
-        border-bottom: 2px solid $primary_white;
+        border-bottom: 0.125rem solid $primary_white;
         font-weight: 600;
     }
 
@@ -118,12 +117,12 @@
             top: 25%;
             left: 5%;
             z-index: 10;
-            width: 250px;
+            width: 15.625rem;
         }
 
         &__soundcloud {
-            width: 300px;
-            height: 95px;
+            width: 18.75rem;
+            height: 5.9375rem;
             position: absolute;
             top: 55%;
             left: 5%;
@@ -150,60 +149,64 @@
     }
 
     /* Shows Container */
-    .showsinfo__container {
-        background-color: $primary_white;
-        padding-left: $MB_padding_betweencomponents;
-        padding-right: $MB_padding_betweencomponents;
+    .showsinfo {
+        &__container {
+            background-color: $primary_white;
+            padding: $MB_padding_betweencomponents;
+
+        }
+
+        &__title {
+            padding-top: $MB_padding_beforeheadline;
+            padding-bottom: $MB_padding_afterheadline;
+        }
     }
 
-    .showsinfo__title {
-        padding-top: $MB_padding_beforeheadline;
-        padding-bottom: $MB_padding_afterheadline;
-    }
+    .shows-information {
+        &__card {
+            padding: 0.9375rem 0rem;
+            border-bottom: 0.0625rem solid $secondary_mercury;
+            display: flex;
+            flex-direction: column;
 
-    .shows-information__card {
-        padding: 15px 0px;
-        border-bottom: 1px solid $secondary_mercury;
-    }
+            &:hover {
+                background-color: $secondary_alabaster;
+            }        
+        }
+
+        &__greycard {
+            background-color: $secondary_mercury;
+        }
 
 
-    .shows-information__card:has(.infocard__buttonlink:visited) {
-        background-color: $secondary_mercury;
-    }
-
-    .shows-information__card:hover {
-        background-color: $secondary_alabaster;
-    }
-
-    .infocard__date, .infocard__venue, .infocard__location, .infocard__button {
-        display: block;
     }
 
     .infocard__date, .infocard__venue, .infocard__location {
-        padding-bottom: 20px;
+        padding-bottom: 1.25rem;
     }
 
-    .infocard__date {
-        font-weight: 600;
-    }
+    .infocard {
+        &__date {
+            font-weight: 600;
+        }
 
-    .infocard__button {
-        background-color: $primary_black;
-        color: $primary_white;
-        width: 100%;
-        height: 50px;
-        border-radius: 4px;
-        font-size: 20px;
-    }
+        &__button {
+            background-color: $primary_black;
+            color: $primary_white;
+            width: 100%;
+            height: 3.125rem;
+            border-radius: 0.25rem;
+            font-size: 1.25rem;
+        }
 
-    .infocard__buttonlink {
-        text-decoration: none;
+        &__buttonlink {
+            text-decoration: none;
+        }
     }
 
     .infocard-title__date--mobile, .infocard-title__venue--mobile, .infocard-title__location--mobile {
-        display: block;
         color: $primary_silver;
-        padding: 5px 0px;
+        padding: 0.3125rem 0rem;
         font-weight: 600;
     }
 
@@ -229,25 +232,25 @@
             display: flex;
             flex-direction: row;
             list-style: none;
-            gap: 28px;
-            height: 25px;
+            gap: 1.75rem;
+            height: 1.5625rem;
 
             &--icon {
-                width: 25px;
-                height: 25px;
+                width: 1.5625rem;
+                height: 1.5625rem;
             }
         }
 
         &__contact {
-            margin-top: 10px;
-            margin-bottom: 40px;
+            margin-top: 0.625rem;
+            margin-bottom: 2.5rem;
 
             &--info {
-                margin: 20px 0px;
+                margin: 1.25rem 0rem;
             }
 
             &--address {
-                margin: 20px 0px;
+                margin: 1.25rem 0rem;
             }
             
             &--email{
@@ -260,15 +263,14 @@
         &__bandsitelogo {
             font-weight: 400;
             box-sizing: border-box;
-            width: 120px;
-            height: 20px;
-            margin-bottom: 5px;
-            display: inline-block;
+            width: 7.5rem;
+            height: 1.25rem;
+            margin-bottom: 0.3125rem;
 
             &--link {
-                width: 120px;
-                height: 20px;
-                font-size: 24px;
+                width: 7.5rem;
+                height: 1.25rem;
+                font-size: 1.5rem;
                 box-sizing: border-box;
                 color: $primary_white;
                 text-decoration: none;
@@ -276,8 +278,8 @@
         }
 
         &__copyright {
-            font-size: 10px;
-            line-height: 20px;
+            font-size: 0.625rem;
+            line-height: 1.25rem;
             font-weight: normal;
         }
     }
@@ -289,38 +291,38 @@
 @media screen and (min-device-width: $tablet_min_viewwidth) {
     /* Font Size */
     .pageheader {
-        font-size: 60px;
-        line-height: 68px;
+        font-size: 3.75rem;
+        line-height: 4.25rem;
         font-weight: 700;
     }
 
     .sectionheader {
-        font-size: 36px;
-        line-height: 44px;
+        font-size: 2.25rem;
+        line-height: 2.75rem;
         font-weight: 700;
     }
 
     .subheader {
-        font-size: 14px;
-        line-height: 32px;
+        font-size: 0.875rem;
+        line-height: 2rem;
         font-weight: 600;
     }
 
     .bodycopy {
-        font-size: 14px;
-        line-height: 22px;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
         font-weight: 400;
     }
 
     .footercopy {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
         font-weight: 400;
     }
 
     .labelandbuttons {
-        font-size: 12px;
-        line-height: 20px;
+        font-size: 0.75rem;
+        line-height: 1.25rem;
         font-weight: 700;
     }
 
@@ -331,16 +333,17 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        height: 50px;
+        height: 3.125rem;
 
         &__title {
             font-weight: normal;
-            margin-left: 30px;
+            margin-left: 5%;
+            width: 7.5rem;
 
             &--link {
                 box-sizing: border-box;
-                max-width: 120px;
-                max-height: 20px;
+                max-width: 7.5rem;
+                max-height: 1.25rem;
                 color: $primary_white;
                 text-decoration: none;
             }
@@ -351,15 +354,15 @@
             flex-direction: row;
             list-style: none;
             justify-content: space-evenly;
-            padding: 0px;
-            gap: 60px;
-            margin-left: 60px;
+            padding: 0rem;
+            gap: 3.75rem;
+            margin-left: 3.75rem;
             position: relative;
-            top: 7px;
+            top: 0.4375rem;
             
             &--item {
                 width: auto;
-                height: 30px;
+                height: 1.875rem;
             }
 
             &--link {
@@ -371,7 +374,7 @@
 
     /* First Container */
     .first__container {
-        height: 425px;
+        height: 26.5625rem;
     }
 
     .first-container {
@@ -380,7 +383,7 @@
             top: 12%;
             left: 5%;
             z-index: 10;
-            font-size: 30px;
+            font-size: 1.875rem;
             font-weight: 600;
         }
 
@@ -389,12 +392,12 @@
             top: 25%;
             left: 5%;
             z-index: 10;
-            width: 600px;
+            width: 37.5rem;
         }
 
         &__soundcloud {
-            width: 400px;
-            height: 120px;
+            width: 25rem;
+            height: 7.5rem;
             position: absolute;
             top: 62%;
             left: 5%;
@@ -402,14 +405,18 @@
         }
 
         &__headerbackground, &__backgroundimg {
-            height: 425px;
+            height: 100%;
 
+        }
+
+        &__backgroundimg {
+            object-position: 0% 34%;
         }
     }
 
     /* Shows Container */
     .showsinfo__container {
-        padding: 36px;
+        padding: 2.25rem;
     }
 
     .infocard-title__date--mobile, .infocard-title__venue--mobile, .infocard-title__location--mobile {
@@ -421,60 +428,67 @@
     .infocard__title--DSK {
         display: flex; 
         flex-direction: row;
-        gap: 40px;
-        margin-left: 5px;
-        margin-top: 15px;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        padding-right: 13.75rem;
+        margin-top: 0.9375rem;
     }
 
     .infocard-title__date--DSK, .infocard-title__venue--DSK, .infocard-title__location--DSK {
-        display: inline-block;
         color: $primary_silver;
         font-weight: 600;
     }
 
-    .infocard-title__date--DSK {
-        width: 150px;
+    .infocard-title {
+        &__date--DSK {
+            width: 9.375rem;
+        }
+
+        &__venue--DSK {
+            width: 7.5rem;
+        }
+
+        &__location--DSK {
+            width: 8.125rem;
+        }
     }
 
-    .infocard-title__venue--DSK {
-        width: 120px;
+    .shows-information {
+        &__card {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2.5rem;
+        }
     }
 
-    .infocard-title__location--DSK {
-        width: 130px;
-    }
+    .infocard {
+        &__date {
+            width: 9.375rem;
+            vertical-align: center;
+            padding-bottom: 0rem;
+        }
 
-    .shows-information__card {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 40px;
-    }
+        &__venue {
+            width: 7.5rem;
+            padding-bottom: 0rem;
+        }
 
-    .infocard__date {
-        width: 150px;
-        vertical-align: center;
-        padding-bottom: 0px;
-    }
+        &__location {
+            width: 8.125rem;
+            padding-bottom: 0rem;
+        }
 
-    .infocard__venue {
-        width: 120px;
-        padding-bottom: 0px;
-    }
-
-    .infocard__location {
-        width: 130px;
-        padding-bottom: 0px;
-    }
-
-    .infocard__button {
-        width: 180px;
+        &__button {
+            width: 11.25rem;
+        }
     }
 
     /* Footer */
     .footer {
-        padding: 36px;
+        padding: 2.25rem;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -489,90 +503,92 @@
     .footer :nth-child(4) {order: 3;}
     .footer :nth-child(5) {order: 5;}
 
-    .footer__sociallist {
-        height: 22px;
-        margin-left: 30px;
-        
-        &--item, &--link, &--icon {
-            width: 22px;
-            height: 22px;
+    .footer {
+        &__sociallist {
+            height: 1.375rem;
+            margin-left: 1.875rem;
+            
+            &--item, &--link, &--icon {
+                width: 1.375rem;
+                height: 1.375rem;
+            }
+        }
+
+        &__bandsitelogo {
+            margin-left: auto;
+        }
+
+        &__contact {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            width: 100vw;
+            margin-top: 0rem;
+            gap: 2.5rem;
+        }
+
+        &__copyright {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            font-weight: 400;
         }
     }
 
-    .footer__bandsitelogo {
-        margin-left: auto;
-    }
-
-    .footer__contact {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        width: 100vw;
-        margin-top: 0px;
-        gap: 40px;
-    }
-
     .footer-contact__contactcard {
-        width: 206px;
+        width: 12.875rem;
     }
-
-    .footer__copyright {
-        font-size: 14px;
-        line-height: 20px;
-        font-weight: 400;
-    }    
 }
 
 /*------Desktop------------------------------------------------------------------*/
 @media screen and (min-device-width: $desktop_min_viewwidth) {
     /* Header */
     .header {
-        height: 70px;
+        height: 4.375rem;
 
         &__title {
-            margin-left: 120px;
-   
+            margin-left: 8%;
         }
 
         &__list {
-            margin-left: 50px;
-            top: 0px; 
+            margin-left: 3.125rem;
+            top: 0rem; 
             &--item {
-                font-size: 20px;
-                height: 12px;
-                padding: 20px 0px 35px 0px;
+                font-size: 1.25rem;
+                height: 0.75rem;
+                padding: 1.25rem 0rem 2.1875rem 0rem;
             }
         }
     }
 
     /* First Container */
     .first__container {
-        height: 700px;
+        height: 43.75rem;
     }
 
     .first-container {
         &__firstheader {
             position: absolute;
             top: 25%;
-            left: 5%;
+            left: 8%;
             z-index: 10;
-            font-size: 30px;
+            font-size: 1.875rem;
             font-weight: 600;
         }
 
         &__secondheader {
-            font-size: 70px;
-            line-height: 100px;
+            font-size: 3.75rem;
+            line-height: 6.25rem;
             position: absolute;
             top: 35%;
-            left: 5%;
+            left: 8%;
             z-index: 10;
-            width: 600px;
+            width: 31.25rem;
+            line-height: 5rem;
         }
 
         &__soundcloud {
-            width: 500px;
-            height: 170px;
+            width: 31.25rem;
+            height: 10.625rem;
             position: absolute;
             top: 38%;
             left: 55%;
@@ -580,40 +596,45 @@
         }
 
         &__headerbackground, &__backgroundimg {
-            height: 700px;
+            height: 43.75rem;
+        }
+
+        &__backgroundimg {
+            object-position: 70% 30%;
         }
     }
 
     /* Shows Container */
     .showsinfo__container {
-        padding: 36px 120px;
+        padding: 2.25rem 7.5rem;
         position: relative;
     }
 
     .infocard__title--DSK {
         position: absolute;
-        top: 60px;
-        left: 370px;
+        top: 3.75rem;
+        left: 17%;
+        width: 46.875rem;
     }
 
     .shows-information__card {
         margin-left: 19%;
-        width: 750px;
+        width: 46.875rem;
     }
 
     /* Footer */
     .footer {
-        padding: 36px 120px;
-    }
+        padding: 2.25rem 7.5rem;
 
-    .footer__sociallist {
-        height: 22px;
-        margin-left: 50px;
-        gap: 30px;
-    }
+        &__sociallist {
+            height: 1.375rem;
+            margin-left: 3.125rem;
+            gap: 1.875rem;
+        }
 
-    .footer__contact {
-        gap: 65px;
+        &__contact {
+            gap: 4.0625rem;
+        }
     }
 }
 

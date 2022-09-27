@@ -30,7 +30,7 @@
   body {
     background-color: #323232;
     font-family: "Avenir";
-    margin: 10px 0px;
+    margin: 0.625rem 0rem;
   }
   div, h1, h2, h3, p, img, ul {
     margin: 0rem;
@@ -38,33 +38,33 @@
   }
   /* Font Size */
   .pageheader {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: 700;
   }
   .sectionheader {
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1.5rem;
+    line-height: 2rem;
     font-weight: 700;
   }
   .subheader {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
     font-weight: 600;
   }
   .bodycopy {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
     font-weight: 400;
   }
   .footercopy {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
     font-weight: 400;
   }
   .labelandbuttons {
-    font-size: 10px;
-    line-height: 20px;
+    font-size: 0.625rem;
+    line-height: 1.25rem;
     font-weight: 700;
   }
   /* Header */
@@ -75,15 +75,14 @@
   .header__title {
     font-weight: 400;
     box-sizing: border-box;
-    width: 120px;
-    height: 20px;
-    margin-bottom: 10px;
-    display: inline-block;
+    width: 100%;
+    height: 1.25rem;
+    margin-bottom: 0.625rem;
   }
   .header__title--link {
-    width: 120px;
-    height: 20px;
-    font-size: 24px;
+    width: 7.5rem;
+    height: 1.25rem;
+    font-size: 1.5rem;
     box-sizing: border-box;
     color: #FFFFFF;
     text-decoration: none;
@@ -93,14 +92,14 @@
     flex-direction: row;
     list-style: none;
     justify-content: space-evenly;
-    padding: 0px;
+    padding: 0rem;
   }
   .header__list--item {
     width: 50vw;
-    padding-bottom: 5px;
+    padding-bottom: 0.3125rem;
   }
   .header__list--link {
-    font-size: 12px;
+    font-size: 0.75rem;
     color: #FFFFFF;
     text-decoration: none;
   }
@@ -112,7 +111,7 @@
     height: 80vw;
   }
   .activepage {
-    border-bottom: 2px solid #FFFFFF;
+    border-bottom: 0.125rem solid #FFFFFF;
     font-weight: 600;
   }
   .first-container__firstheader {
@@ -126,11 +125,11 @@
     top: 25%;
     left: 5%;
     z-index: 10;
-    width: 250px;
+    width: 15.625rem;
   }
   .first-container__soundcloud {
-    width: 300px;
-    height: 95px;
+    width: 18.75rem;
+    height: 5.9375rem;
     position: absolute;
     top: 55%;
     left: 5%;
@@ -155,28 +154,26 @@
   /* Shows Container */
   .showsinfo__container {
     background-color: #FFFFFF;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 16px;
   }
   .showsinfo__title {
     padding-top: 24px;
     padding-bottom: 16px;
   }
   .shows-information__card {
-    padding: 15px 0px;
-    border-bottom: 1px solid #E1E1E1;
-  }
-  .shows-information__card:has(.infocard__buttonlink:visited) {
-    background-color: #E1E1E1;
+    padding: 0.9375rem 0rem;
+    border-bottom: 0.0625rem solid #E1E1E1;
+    display: flex;
+    flex-direction: column;
   }
   .shows-information__card:hover {
     background-color: #FAFAFA;
   }
-  .infocard__date, .infocard__venue, .infocard__location, .infocard__button {
-    display: block;
+  .shows-information__greycard {
+    background-color: #E1E1E1;
   }
   .infocard__date, .infocard__venue, .infocard__location {
-    padding-bottom: 20px;
+    padding-bottom: 1.25rem;
   }
   .infocard__date {
     font-weight: 600;
@@ -185,17 +182,16 @@
     background-color: #323232;
     color: #FFFFFF;
     width: 100%;
-    height: 50px;
-    border-radius: 4px;
-    font-size: 20px;
+    height: 3.125rem;
+    border-radius: 0.25rem;
+    font-size: 1.25rem;
   }
   .infocard__buttonlink {
     text-decoration: none;
   }
   .infocard-title__date--mobile, .infocard-title__venue--mobile, .infocard-title__location--mobile {
-    display: block;
     color: #AFAFAF;
-    padding: 5px 0px;
+    padding: 0.3125rem 0rem;
     font-weight: 600;
   }
   .infocard-title__date--DSK, .infocard-title__venue--DSK, .infocard-title__location--DSK {
@@ -218,22 +214,22 @@
     display: flex;
     flex-direction: row;
     list-style: none;
-    gap: 28px;
-    height: 25px;
+    gap: 1.75rem;
+    height: 1.5625rem;
   }
   .footer__sociallist--icon {
-    width: 25px;
-    height: 25px;
+    width: 1.5625rem;
+    height: 1.5625rem;
   }
   .footer__contact {
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin-top: 0.625rem;
+    margin-bottom: 2.5rem;
   }
   .footer__contact--info {
-    margin: 20px 0px;
+    margin: 1.25rem 0rem;
   }
   .footer__contact--address {
-    margin: 20px 0px;
+    margin: 1.25rem 0rem;
   }
   .footer__contact--email {
     color: #FFFFFF;
@@ -242,22 +238,21 @@
   .footer__bandsitelogo {
     font-weight: 400;
     box-sizing: border-box;
-    width: 120px;
-    height: 20px;
-    margin-bottom: 5px;
-    display: inline-block;
+    width: 7.5rem;
+    height: 1.25rem;
+    margin-bottom: 0.3125rem;
   }
   .footer__bandsitelogo--link {
-    width: 120px;
-    height: 20px;
-    font-size: 24px;
+    width: 7.5rem;
+    height: 1.25rem;
+    font-size: 1.5rem;
     box-sizing: border-box;
     color: #FFFFFF;
     text-decoration: none;
   }
   .footer__copyright {
-    font-size: 10px;
-    line-height: 20px;
+    font-size: 0.625rem;
+    line-height: 1.25rem;
     font-weight: normal;
   }
 }
@@ -265,33 +260,33 @@
 @media screen and (min-device-width: 768px) {
   /* Font Size */
   .pageheader {
-    font-size: 60px;
-    line-height: 68px;
+    font-size: 3.75rem;
+    line-height: 4.25rem;
     font-weight: 700;
   }
   .sectionheader {
-    font-size: 36px;
-    line-height: 44px;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
     font-weight: 700;
   }
   .subheader {
-    font-size: 14px;
-    line-height: 32px;
+    font-size: 0.875rem;
+    line-height: 2rem;
     font-weight: 600;
   }
   .bodycopy {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 0.875rem;
+    line-height: 1.375rem;
     font-weight: 400;
   }
   .footercopy {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     font-weight: 400;
   }
   .labelandbuttons {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 0.75rem;
+    line-height: 1.25rem;
     font-weight: 700;
   }
   /* Header */
@@ -301,16 +296,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 50px;
+    height: 3.125rem;
   }
   .header__title {
     font-weight: normal;
-    margin-left: 30px;
+    margin-left: 5%;
+    width: 7.5rem;
   }
   .header__title--link {
     box-sizing: border-box;
-    max-width: 120px;
-    max-height: 20px;
+    max-width: 7.5rem;
+    max-height: 1.25rem;
     color: #FFFFFF;
     text-decoration: none;
   }
@@ -319,15 +315,15 @@
     flex-direction: row;
     list-style: none;
     justify-content: space-evenly;
-    padding: 0px;
-    gap: 60px;
-    margin-left: 60px;
+    padding: 0rem;
+    gap: 3.75rem;
+    margin-left: 3.75rem;
     position: relative;
-    top: 7px;
+    top: 0.4375rem;
   }
   .header__list--item {
     width: auto;
-    height: 30px;
+    height: 1.875rem;
   }
   .header__list--link {
     color: #FFFFFF;
@@ -335,14 +331,14 @@
   }
   /* First Container */
   .first__container {
-    height: 425px;
+    height: 26.5625rem;
   }
   .first-container__firstheader {
     position: absolute;
     top: 12%;
     left: 5%;
     z-index: 10;
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 600;
   }
   .first-container__secondheader {
@@ -350,22 +346,26 @@
     top: 25%;
     left: 5%;
     z-index: 10;
-    width: 600px;
+    width: 37.5rem;
   }
   .first-container__soundcloud {
-    width: 400px;
-    height: 120px;
+    width: 25rem;
+    height: 7.5rem;
     position: absolute;
     top: 62%;
     left: 5%;
     z-index: 10;
   }
   .first-container__headerbackground, .first-container__backgroundimg {
-    height: 425px;
+    height: 100%;
+  }
+  .first-container__backgroundimg {
+    -o-object-position: 0% 34%;
+       object-position: 0% 34%;
   }
   /* Shows Container */
   .showsinfo__container {
-    padding: 36px;
+    padding: 2.25rem;
   }
   .infocard-title__date--mobile, .infocard-title__venue--mobile, .infocard-title__location--mobile {
     display: none;
@@ -375,50 +375,51 @@
   .infocard__title--DSK {
     display: flex;
     flex-direction: row;
-    gap: 40px;
-    margin-left: 5px;
-    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    padding-right: 13.75rem;
+    margin-top: 0.9375rem;
   }
   .infocard-title__date--DSK, .infocard-title__venue--DSK, .infocard-title__location--DSK {
-    display: inline-block;
     color: #AFAFAF;
     font-weight: 600;
   }
   .infocard-title__date--DSK {
-    width: 150px;
+    width: 9.375rem;
   }
   .infocard-title__venue--DSK {
-    width: 120px;
+    width: 7.5rem;
   }
   .infocard-title__location--DSK {
-    width: 130px;
+    width: 8.125rem;
   }
   .shows-information__card {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 40px;
+    gap: 2.5rem;
   }
   .infocard__date {
-    width: 150px;
+    width: 9.375rem;
     vertical-align: center;
-    padding-bottom: 0px;
+    padding-bottom: 0rem;
   }
   .infocard__venue {
-    width: 120px;
-    padding-bottom: 0px;
+    width: 7.5rem;
+    padding-bottom: 0rem;
   }
   .infocard__location {
-    width: 130px;
-    padding-bottom: 0px;
+    width: 8.125rem;
+    padding-bottom: 0rem;
   }
   .infocard__button {
-    width: 180px;
+    width: 11.25rem;
   }
   /* Footer */
   .footer {
-    padding: 36px;
+    padding: 2.25rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -442,12 +443,12 @@
     order: 5;
   }
   .footer__sociallist {
-    height: 22px;
-    margin-left: 30px;
+    height: 1.375rem;
+    margin-left: 1.875rem;
   }
   .footer__sociallist--item, .footer__sociallist--link, .footer__sociallist--icon {
-    width: 22px;
-    height: 22px;
+    width: 1.375rem;
+    height: 1.375rem;
   }
   .footer__bandsitelogo {
     margin-left: auto;
@@ -457,93 +458,99 @@
     flex-direction: row;
     justify-content: flex-start;
     width: 100vw;
-    margin-top: 0px;
-    gap: 40px;
-  }
-  .footer-contact__contactcard {
-    width: 206px;
+    margin-top: 0rem;
+    gap: 2.5rem;
   }
   .footer__copyright {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     font-weight: 400;
+  }
+  .footer-contact__contactcard {
+    width: 12.875rem;
   }
 }
 /*------Desktop------------------------------------------------------------------*/
 @media screen and (min-device-width: 1280px) {
   /* Header */
   .header {
-    height: 70px;
+    height: 4.375rem;
   }
   .header__title {
-    margin-left: 120px;
+    margin-left: 8%;
   }
   .header__list {
-    margin-left: 50px;
-    top: 0px;
+    margin-left: 3.125rem;
+    top: 0rem;
   }
   .header__list--item {
-    font-size: 20px;
-    height: 12px;
-    padding: 20px 0px 35px 0px;
+    font-size: 1.25rem;
+    height: 0.75rem;
+    padding: 1.25rem 0rem 2.1875rem 0rem;
   }
   /* First Container */
   .first__container {
-    height: 700px;
+    height: 43.75rem;
   }
   .first-container__firstheader {
     position: absolute;
     top: 25%;
-    left: 5%;
+    left: 8%;
     z-index: 10;
-    font-size: 30px;
+    font-size: 1.875rem;
     font-weight: 600;
   }
   .first-container__secondheader {
-    font-size: 70px;
-    line-height: 100px;
+    font-size: 3.75rem;
+    line-height: 6.25rem;
     position: absolute;
     top: 35%;
-    left: 5%;
+    left: 8%;
     z-index: 10;
-    width: 600px;
+    width: 31.25rem;
+    line-height: 5rem;
   }
   .first-container__soundcloud {
-    width: 500px;
-    height: 170px;
+    width: 31.25rem;
+    height: 10.625rem;
     position: absolute;
     top: 38%;
     left: 55%;
     z-index: 10;
   }
   .first-container__headerbackground, .first-container__backgroundimg {
-    height: 700px;
+    height: 43.75rem;
+  }
+  .first-container__backgroundimg {
+    -o-object-position: 70% 30%;
+       object-position: 70% 30%;
   }
   /* Shows Container */
   .showsinfo__container {
-    padding: 36px 120px;
+    padding: 2.25rem 7.5rem;
     position: relative;
   }
   .infocard__title--DSK {
     position: absolute;
-    top: 60px;
-    left: 370px;
+    top: 3.75rem;
+    left: 17%;
+    width: 46.875rem;
   }
   .shows-information__card {
     margin-left: 19%;
-    width: 750px;
+    width: 46.875rem;
   }
   /* Footer */
   .footer {
-    padding: 36px 120px;
+    padding: 2.25rem 7.5rem;
   }
   .footer__sociallist {
-    height: 22px;
-    margin-left: 50px;
-    gap: 30px;
+    height: 1.375rem;
+    margin-left: 3.125rem;
+    gap: 1.875rem;
   }
   .footer__contact {
-    gap: 65px;
+    gap: 4.0625rem;
   }
 }
 /* hidden content based on viewport width */
