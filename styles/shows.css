@@ -382,6 +382,7 @@
     margin-top: 0.9375rem;
   }
   .infocard-title__date--DSK, .infocard-title__venue--DSK, .infocard-title__location--DSK {
+    display: inline-block;
     color: #AFAFAF;
     font-weight: 600;
   }

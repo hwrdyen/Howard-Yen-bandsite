@@ -436,6 +436,7 @@
     }
 
     .infocard-title__date--DSK, .infocard-title__venue--DSK, .infocard-title__location--DSK {
+        display: inline-block;
         color: $primary_silver;
         font-weight: 600;
     }
