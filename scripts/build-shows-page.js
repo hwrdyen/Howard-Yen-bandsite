@@ -114,11 +114,19 @@ for (let i = 0; i<showinfo_database.length; i++){
 }
 /* Finished Setting up the default show information */
 
-/* Buy Button Action */
-//After visited the BUY TICKETS link, apply selected state for ShowInfoCard
-let buyticketbutton = document.querySelectorAll(".infocard__button")
-buyticketbutton.addEventListener(("click"), (event) => {
-    let parentdiv_id = document.getElementById(event.target.parentElement.id);
-    parentdiv_id.classList.add("shows-information__greycard");
-})
-
+/* Selected State */
+//After clicked the shows info card, apply grey background for ShowInfoCard
+for (let i = 0; i<showinfo_database.length; i++){
+    let showinfo__card = document.getElementById(i);
+    showinfo__card.addEventListener('click', (event) => {
+        for (let j = 0; j<showinfo_database.length; j++){
+            if (j !== i) {
+                let notselectedshowin_card = document.getElementById(j);
+                notselectedshowin_card.classList.remove("shows-information__greycard");
+            }
+            else {
+                showinfo__card.classList.add("shows-information__greycard");
+            }
+        }
+    })
+}
