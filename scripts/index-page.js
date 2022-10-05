@@ -1,11 +1,5 @@
-const showncomment_database = [
-    {author: "Connor Walton", timestamp: "02/17/2021", comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains."},
-    {author: "Emilie Beach", timestamp: "01/09/2021", comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day."},
-    {author: "Miles Acosta", timestamp: "12/20/2020", comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough."}
-]
-
 let conversation__record = document.querySelector(".conversation__record");
-//console.log(showncomment_database.length);
+
 function displayComment(comment_data) {
     let comment__card = document.createElement("div");
     comment__card.classList.add("comment__card");
@@ -30,8 +24,14 @@ function displayComment(comment_data) {
     comment__author.classList.add("comment__author");
     comment__timestamp.classList.add("comment__timestamp");
     comment__comment.classList.add("comment__comment");
-    comment__author.innerText = comment_data.author;
-    comment__timestamp.innerText = comment_data.timestamp;
+    comment__author.innerText = comment_data.name;
+    //convert epoch time to yymmdd
+    var epochstamp = comment_data.timestamp;
+    var timestamp = new Date(epochstamp);
+    var timestamp_year = timestamp.getFullYear();
+    var timestamp_month = ("00" + (timestamp.getMonth() + 1)).slice(-2);
+    var timestamp_date = ("00" + timestamp.getDate()).slice(-2);
+    comment__timestamp.innerText = (timestamp_month + "/" + timestamp_date + "/" + timestamp_year);
     comment__comment.innerText = comment_data.comment;
 
     /* author and timestamp added into content_title */
@@ -42,34 +42,66 @@ function displayComment(comment_data) {
     comment__content.appendChild(comment__comment);
 }
 
-for (let i = 0; i<showncomment_database.length; i++) {
-    displayComment(showncomment_database[i]); //build the comment__card for three default comments
+let api_key = undefined;
+
+function GetRegister() {
+    if (api_key === undefined) {
+        return axios.get("https://project-1-api.herokuapp.com/register").then((response) => {
+            api_key = response.data.api_key;
+            return Promise.resolve(api_key);
+        })
+    }
+    else {
+        return Promise.resolve(api_key);
+    }
+}
+
+GetRegister();
+
+function GetComments() {
+    GetRegister().then((api_key) => {
+        return axios.get(`https://project-1-api.herokuapp.com/comments?api_key=${api_key}`).then((element) => {
+            var comments_info = element.data;
+            comments_info.sort(function(x, y){
+                return y.timestamp - x.timestamp;
+            })
+            comments_info.forEach((e) => {
+                displayComment(e);
+            })
+        })
+    })
+}
+
+GetComments();
+
+function PostComment(comment_author, comment_comment) {
+    GetRegister().then((api_key) => {
+        axios.post(`https://project-1-api.herokuapp.com/comments?api_key=${api_key}`, {
+            name: comment_author,
+            comment: comment_comment
+        }).then((response) => {
+            GetComments();
+        })
+    })
 }
 
 let submit__button = document.querySelector("#submit__button");
 let form = document.querySelector("form");
 submit__button.addEventListener('click', (event) => {
     event.preventDefault();
-    /* create an Empty object to store comment information */
-    let showncomment_data = {};
     /* get name from the Form */
     let submit_name = document.getElementById("name").value;
     /* get comment from the Form */
     let submit_comment = document.getElementById("comment").value;
-    /* get Timestamp */
-    var date = new Date();
-    var submit_timestamp = (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear();
-
-    showncomment_data["author"] = submit_name
-    showncomment_data["timestamp"] = submit_timestamp;
-    showncomment_data["comment"] = submit_comment;
     if (submit_name != "" && submit_comment != "") {
         let comment_author = document.getElementById("name");
         comment_author.classList.remove("inputredborder");
         let comment_comment = document.getElementById("comment");
         comment_comment.classList.remove("inputredborder");
-        
-        showncomment_database.unshift(showncomment_data);
+        let conversation__record = document.querySelector(".conversation__record");
+        conversation__record.replaceChildren();
+        PostComment(submit_name, submit_comment);
+
     } else {
         if (submit_name === "") {
             let comment_author = document.getElementById("name");
@@ -84,15 +116,8 @@ submit__button.addEventListener('click', (event) => {
             comment_author.classList.add("inputredborder");
             let comment_comment = document.getElementById("comment");
             comment_comment.classList.add("inputredborder");
-        }           
-
+        }          
     }
 
-    //console.log(showncomment_database);
     form.reset();
-    let conversation__record = document.querySelector(".conversation__record");
-    conversation__record.replaceChildren();
-    for (let i = 0; i<showncomment_database.length; i++) {
-        displayComment(showncomment_database[i]);
-    }
 })

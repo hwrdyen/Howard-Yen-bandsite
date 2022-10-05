@@ -283,7 +283,7 @@ textarea {
     background-color: #E1E1E1;
   }
   .comment__content {
-    width: 100%;
+    width: 80%;
     position: relative;
   }
   .comment__content--title {

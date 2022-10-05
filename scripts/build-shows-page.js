@@ -1,12 +1,3 @@
-showinfo_database = [
-    {date: "Mon Sept 06 2021", venue: "Ronald Lane", location: "San Francisco, CA" },
-    {date: "Tue Sept 21 2021", venue: "Pier 3 East", location: "San Francisco, CA" },
-    {date: "Fri Oct 15 2021", venue: "View Lounge", location: "San Francisco, CA" },
-    {date: "Sat Nov 06 2021", venue: "Hyatt Agency", location: "San Francisco, CA" },
-    {date: "Fri Nov 26 2021", venue: "Moscow Center", location: "San Francisco, CA" },
-    {date: "Wed Dec 15 2021", venue: "Press Club", location: "San Francisco, CA" }
-]
-
 let showsinfo__container = document.querySelector(".showsinfo__container");
 function createShowInfoContainer(show_title) {
     let showsinfo__title = document.createElement("h1");
@@ -22,13 +13,13 @@ function createShowInfoContent() {
     showsinfo__container.appendChild(showsinfo__content);
 }
 
-function appendShowInfoCard__mobile(shows_info, shows_id) {
+function appendShowInfoCard__mobile(shows_info) {
     let showsinfo__content = document.querySelector(".showsinfo__content");
 
     //create shows info card and append into shows info content
     let showsinformation__card = document.createElement("div");
     showsinformation__card.classList.add("shows-information__card");
-    showsinformation__card.setAttribute("id", shows_id);
+    showsinformation__card.setAttribute("id", shows_info["id"]);
     showsinfo__content.appendChild(showsinformation__card);
 
     
@@ -42,7 +33,10 @@ function appendShowInfoCard__mobile(shows_info, shows_id) {
         //date
         let infocard__date = document.createElement("span");
         infocard__date.classList.add("infocard__date");
-        infocard__date.innerText = shows_info["date"];
+        let epochstamp = shows_info["date"];
+        var timestamp = new Date(parseInt(epochstamp)).toDateString();
+        console.log(typeof timestamp);
+        infocard__date.innerText = timestamp;
         showsinformation__card.appendChild(infocard__date);
 
         //VENUE Title
@@ -54,7 +48,7 @@ function appendShowInfoCard__mobile(shows_info, shows_id) {
         //venue
         let infocard__venue = document.createElement("span");
         infocard__venue.classList.add("infocard__venue");
-        infocard__venue.innerText = shows_info["venue"];
+        infocard__venue.innerText = shows_info["place"];
         showsinformation__card.appendChild(infocard__venue);
 
         //LOCATION Title
@@ -103,30 +97,61 @@ function appendShowInfoTitle__DSK() {
     infocard__title__DSK.appendChild(infocardtitle__location);
 }
 
+let api_key = undefined;
 
-/* Build the Show Info Container */
+function GetRegister() {
+    if (api_key === undefined) {
+        return axios.get("https://project-1-api.herokuapp.com/register").then((response) => {
+            api_key = response.data.api_key;
+            return Promise.resolve(api_key);
+        })
+    }
+    else {
+        return Promise.resolve(api_key);
+    }
+}
+
+function GetShowDates() {
+    GetRegister().then((api_key) => {
+        return axios.get(`https://project-1-api.herokuapp.com/showdates?api_key=${api_key}`).then((element) => {
+            var showdates_info = element.data;
+            //console.log(showdates_info);
+            showdates_info.forEach((e) => {
+                appendShowInfoCard__mobile(e);
+            })
+
+            return Promise.resolve(showdates_info);
+        }).then((showsdates_info) => {
+
+            console.log("after finished setting up");
+            console.log(showsdates_info);
+            /* Finished Setting up the default show information */
+
+            /* Selected State */
+            //After clicked the shows info card, apply grey background for ShowInfoCard
+            for (let i = 0; i<Object.keys(showsdates_info).length; i++){
+            //    console.log(showsdates_info[i].id);
+                let showinfo__card = document.getElementById(showsdates_info[i].id);
+                showinfo__card.addEventListener('click', (event) => {
+                    for (let j = 0; j<Object.keys(showsdates_info).length; j++){
+                        if (showsdates_info[j].id !== showsdates_info[i].id) {
+                            let notselectedshowin_card = document.getElementById(showsdates_info[j].id);
+                            notselectedshowin_card.classList.remove("shows-information__greycard");
+                        }
+                        else {
+                            showinfo__card.classList.add("shows-information__greycard");
+                        }
+                    }
+                })
+            }
+        })
+    })
+}
+
 createShowInfoContainer("Shows");
 createShowInfoContent();
 
 appendShowInfoTitle__DSK();
-for (let i = 0; i<showinfo_database.length; i++){
-    appendShowInfoCard__mobile(showinfo_database[i], i);
-}
-/* Finished Setting up the default show information */
 
-/* Selected State */
-//After clicked the shows info card, apply grey background for ShowInfoCard
-for (let i = 0; i<showinfo_database.length; i++){
-    let showinfo__card = document.getElementById(i);
-    showinfo__card.addEventListener('click', (event) => {
-        for (let j = 0; j<showinfo_database.length; j++){
-            if (j !== i) {
-                let notselectedshowin_card = document.getElementById(j);
-                notselectedshowin_card.classList.remove("shows-information__greycard");
-            }
-            else {
-                showinfo__card.classList.add("shows-information__greycard");
-            }
-        }
-    })
-}
+GetRegister();
+GetShowDates();
