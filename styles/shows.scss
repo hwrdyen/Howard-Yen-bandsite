@@ -12,6 +12,10 @@
         padding: 0rem;
     }
 
+    iframe {
+        border: 0rem;
+    }
+
     /* Font Size */
     .pageheader {
         font-size: 1.5rem;
@@ -145,6 +149,7 @@
             width: 100vw;
             height: 100%;
             object-fit: cover;
+            object-position: 0% 10%;
         }
     }
 
@@ -191,12 +196,19 @@
         }
 
         &__button {
+            border: 0.5rem solid $primary_black;
             background-color: $primary_black;
             color: $primary_white;
             width: 100%;
             height: 3.125rem;
             border-radius: 0.25rem;
             font-size: 1.25rem;
+
+            &:hover {
+                border-color: $secondary_darkblack;
+                background-color: $secondary_darkblack;
+                color: $primary_white;
+            }
         }
 
         &__buttonlink {
@@ -208,6 +220,7 @@
         color: $primary_silver;
         padding: 0.3125rem 0rem;
         font-weight: 600;
+        font-size: 0.8125rem;
     }
 
     .infocard-title__date--DSK, .infocard-title__venue--DSK, .infocard-title__location--DSK {
@@ -374,7 +387,7 @@
 
     /* First Container */
     .first__container {
-        height: 26.5625rem;
+        height: 60vw;
     }
 
     .first-container {
@@ -439,6 +452,7 @@
         display: inline-block;
         color: $primary_silver;
         font-weight: 600;
+        font-size: 13px;
     }
 
     .infocard-title {
@@ -563,7 +577,7 @@
 
     /* First Container */
     .first__container {
-        height: 43.75rem;
+        height: 50vw;
     }
 
     .first-container {
@@ -594,10 +608,6 @@
             top: 38%;
             left: 55%;
             z-index: 10;
-        }
-
-        &__headerbackground, &__backgroundimg {
-            height: 43.75rem;
         }
 
         &__backgroundimg {

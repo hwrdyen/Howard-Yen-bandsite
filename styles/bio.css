@@ -146,7 +146,11 @@ textarea {
     opacity: 50%;
   }
   .first-container__backgroundimg {
-    width: 100vw;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 45% 55%;
+       object-position: 45% 55%;
+    width: 100%;
     height: 100%;
   }
   /* About the Musicians */
@@ -221,6 +225,8 @@ textarea {
     border-bottom: 0.0625rem solid #E1E1E1;
   }
   .conversation__profileimg {
+    -o-object-position: 20% 80%;
+       object-position: 20% 80%;
     position: relative;
     top: 1.25rem;
     border-radius: 50%;
@@ -245,11 +251,13 @@ textarea {
     height: 1.875rem;
     text-align: center;
     border-radius: 0.25rem;
+    border: 0.5rem solid #323232;
     background-color: #323232;
     color: #FFFFFF;
     padding: 0.125rem 0rem;
   }
   .conversation__button:hover {
+    border-color: #000000;
     background-color: #000000;
     color: #FFFFFF;
   }
@@ -432,13 +440,6 @@ textarea {
     color: #FFFFFF;
     text-decoration: none;
   }
-  /* First Container */
-  .first__container {
-    height: 26.5625rem;
-  }
-  .first-container__headerbackground, .first-container__backgroundimg {
-    height: 26.5625rem;
-  }
   /* Second Container */
   .second__container {
     padding: 2.25rem;
@@ -530,6 +531,8 @@ textarea {
     height: 2.8125rem;
     width: 12.5rem;
     font-size: 1.25rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   form {
     position: relative;
@@ -538,7 +541,7 @@ textarea {
     margin-left: 6%;
   }
   .comment__content {
-    width: 100%;
+    width: 80%;
   }
   /* Footer */
   .footer {
@@ -612,14 +615,8 @@ textarea {
     padding: 1.25rem 0rem 2.1875rem 0rem;
   }
   /* First Container */
-  .first__container {
-    height: 43.75rem;
-  }
   .first-container__header {
     margin-left: 3.75rem;
-  }
-  .first-container__headerbackground, .first-container__backgroundimg {
-    height: 43.75rem;
   }
   /* Second Container */
   .second-container__title {

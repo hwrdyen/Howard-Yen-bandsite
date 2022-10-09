@@ -36,6 +36,9 @@
     margin: 0rem;
     padding: 0rem;
   }
+  iframe {
+    border: 0rem;
+  }
   /* Font Size */
   .pageheader {
     font-size: 1.5rem;
@@ -150,6 +153,8 @@
     height: 100%;
     -o-object-fit: cover;
        object-fit: cover;
+    -o-object-position: 0% 10%;
+       object-position: 0% 10%;
   }
   /* Shows Container */
   .showsinfo__container {
@@ -179,12 +184,18 @@
     font-weight: 600;
   }
   .infocard__button {
+    border: 0.5rem solid #323232;
     background-color: #323232;
     color: #FFFFFF;
     width: 100%;
     height: 3.125rem;
     border-radius: 0.25rem;
     font-size: 1.25rem;
+  }
+  .infocard__button:hover {
+    border-color: #000000;
+    background-color: #000000;
+    color: #FFFFFF;
   }
   .infocard__buttonlink {
     text-decoration: none;
@@ -193,6 +204,7 @@
     color: #AFAFAF;
     padding: 0.3125rem 0rem;
     font-weight: 600;
+    font-size: 0.8125rem;
   }
   .infocard-title__date--DSK, .infocard-title__venue--DSK, .infocard-title__location--DSK {
     display: none;
@@ -331,7 +343,7 @@
   }
   /* First Container */
   .first__container {
-    height: 26.5625rem;
+    height: 60vw;
   }
   .first-container__firstheader {
     position: absolute;
@@ -385,6 +397,7 @@
     display: inline-block;
     color: #AFAFAF;
     font-weight: 600;
+    font-size: 13px;
   }
   .infocard-title__date--DSK {
     width: 9.375rem;
@@ -491,7 +504,7 @@
   }
   /* First Container */
   .first__container {
-    height: 43.75rem;
+    height: 50vw;
   }
   .first-container__firstheader {
     position: absolute;
@@ -518,9 +531,6 @@
     top: 38%;
     left: 55%;
     z-index: 10;
-  }
-  .first-container__headerbackground, .first-container__backgroundimg {
-    height: 43.75rem;
   }
   .first-container__backgroundimg {
     -o-object-position: 70% 30%;
